@@ -23,7 +23,7 @@ day5hw/
 ├── site/                      <-- THE DEPLOYABLE FOLDER. Drop this one, nothing else.
 │   ├── index.html             8 sections, in order. All copy lives here.
 │   ├── styles.css             design tokens + every component. No CSS framework.
-│   ├── script.js              7 jobs: icons, reveal, count-up, modal, chrome, progress, parallax
+│   ├── script.js              6 jobs: reveal, count-up, modal, chrome, progress, parallax
 │   └── assets/                copy of the 6 images, referenced as assets/...
 ├── assets/                    master copy from the image-generation step (MASTER-DIA5.md).
 │                              Byte-identical to site/assets/. Do not delete either one.
@@ -75,8 +75,8 @@ Check these before calling any change done:
 | Forbidden | neon, yellow, rainbow, "stocky generic AI" gradients |
 | Headings | Karla 700 |
 | Body | Inter 400 |
-| Icons | Lucide, one set, via CDN. Keep `data-lucide` attributes and the init call |
-| External deps | Google Fonts + Lucide CDN. Nothing else |
+| Icons | Lucide, one set, inlined as static SVGs in the markup. No CDN, no download |
+| External deps | Google Fonts only. Nothing else |
 | Copy | English, verbatim from the source docs. Never reworded, never re-ordered |
 
 Supporting tints of the same hues (`--blue-50` … `--blue-400`, `--navy-deep`) are allowed;
