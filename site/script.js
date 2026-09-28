@@ -1,13 +1,13 @@
 /* ==========================================================================
    Pareto Talent — Right Hand Program
-   Vanilla JS, no dependencies. Seven jobs:
-     1. Render the Lucide icon set (CDN) with a safe fallback
-     2. Reveal sections on scroll with IntersectionObserver (staggered)
-     3. Count-up the social-proof stats once they scroll into view
-     4. Open/close the program-details dialog with focus management
-     5. Smooth in-page navigation + sticky navbar state
-     6. Reading-progress hairline in the navbar
-     7. Optional pointer parallax on the hero glows (fine pointers only)
+   Vanilla JS, no dependencies. Six jobs:
+     1. Reveal sections on scroll with IntersectionObserver (staggered)
+     2. Count-up the social-proof stats once they scroll into view
+     3. Open/close the program-details dialog with focus management
+     4. Smooth in-page navigation + sticky navbar state
+     5. Reading-progress hairline in the navbar
+     6. Optional pointer parallax on the hero glows (fine pointers only)
+   The icon set is inlined as static SVGs in the markup — no external CDN.
    ========================================================================== */
 (function () {
   'use strict';
@@ -15,38 +15,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------------------
-   * 1. Icons — Lucide
-   * ------------------------------------------------------------------- */
-  function renderIcons() {
-    // The CDN is external; if it is blocked the page must still look correct,
-    // so the placeholder <i> elements are hidden and the rest stands on its own.
-    if (typeof window.lucide === 'undefined' || typeof window.lucide.createIcons !== 'function') {
-      document.querySelectorAll('i[data-lucide]').forEach(function (el) {
-        el.style.display = 'none';
-      });
-      return;
-    }
-
-    try {
-      window.lucide.createIcons({
-        attrs: { 'stroke-width': 2, 'aria-hidden': 'true', focusable: 'false' }
-      });
-    } catch (err) {
-      // Older builds may not accept the options object.
-      window.lucide.createIcons();
-    }
-
-    // Decorative by definition: keep them out of the accessibility tree
-    // regardless of which Lucide build is served.
-    document.querySelectorAll('svg[data-lucide], .icon-badge svg, .checks svg, .offer__icon svg')
-      .forEach(function (svg) {
-        svg.setAttribute('aria-hidden', 'true');
-        svg.setAttribute('focusable', 'false');
-      });
-  }
-
-  /* ---------------------------------------------------------------------
-   * 2. Scroll reveal
+   * 1. Scroll reveal
    * ------------------------------------------------------------------- */
   function stagger(container, selector, step, start) {
     var items = container.querySelectorAll(selector);
@@ -163,7 +132,7 @@
   }
 
   /* ---------------------------------------------------------------------
-   * 4. Program-details dialog
+   * 3. Program-details dialog
    *
    * The body is cloned out of #offer on first open instead of being repeated in
    * the HTML: the seven components and the pricing line then cannot drift away
@@ -297,7 +266,7 @@
   }
 
   /* ---------------------------------------------------------------------
-   * 5. Chrome — sticky navbar state, reading progress + smooth anchors
+   * 4. Chrome — sticky navbar state, reading progress + smooth anchors
    * ------------------------------------------------------------------- */
   function initChrome() {
     var navbar = document.getElementById('navbar');
@@ -352,7 +321,7 @@
   }
 
   /* ---------------------------------------------------------------------
-   * 6. Hero glow parallax — the one piece of JS-driven motion
+   * 5. Hero glow parallax — the one piece of JS-driven motion
    *
    * Kept deliberately cheap: it writes a single transform per layer inside one
    * requestAnimationFrame loop that stops itself as soon as the layers settle,
@@ -420,7 +389,6 @@
 
   /* ------------------------------------------------------------------- */
   function init() {
-    renderIcons();
     initReveal();
     initCountUp();
     initModal();
@@ -433,9 +401,4 @@
   } else {
     init();
   }
-
-  // The Lucide CDN script is deferred like ours, but never rely on ordering.
-  window.addEventListener('load', function () {
-    if (typeof window.lucide !== 'undefined') renderIcons();
-  });
 })();
