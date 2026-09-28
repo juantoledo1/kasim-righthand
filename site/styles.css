@@ -594,6 +594,16 @@ strong { color: var(--ink); font-weight: 400; }
   gap: 22px;
 }
 
+/* Progressive hover: steps highlight one-by-one from the first card, only
+   while the whole list is hovered. Each card keeps its own hover too, so a
+   single card still responds instantly. */
+.steps:hover .card { transition-delay: 0s; }
+.steps:hover .card:nth-child(1) { transition-delay: 0s; }
+.steps:hover .card:nth-child(2) { transition-delay: 60ms; }
+.steps:hover .card:nth-child(3) { transition-delay: 120ms; }
+.steps:hover .card:nth-child(4) { transition-delay: 180ms; }
+.steps:hover .card:nth-child(5) { transition-delay: 240ms; }
+
 .icon-badge {
   display: inline-flex;
   align-items: center;
@@ -652,6 +662,15 @@ strong { color: var(--ink); font-weight: 400; }
 
 .card--step h3 { margin-bottom: .4rem; }
 .card--step p  { font-size: .97rem; }
+
+/* ----------------------------- Trust note --------------------------------- */
+/* Micro-line under the hero CTA: lowers the anxiety that kills conversions
+   ("Is this a trap?"). Kept small, gray, and quiet so the button leads. */
+.trust-note {
+  margin: 14px 0 0;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
 
 /* ------------------------------- Benefits --------------------------------- */
 .checks {
