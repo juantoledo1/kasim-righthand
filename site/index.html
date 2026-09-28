@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pareto Talent — Get 20 Hours Back Every Week | The Right Hand Program</title>
+  <meta name="description" content="Pareto Talent places a top 1% executive assistant in your business — trained, managed, and backed by guarantees — so you can work on the business, not in it.">
+  <meta name="theme-color" content="#1E3A8A">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Karla:wght@700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    Marks the document as JS-capable before first paint so the scroll-reveal
+    styles only hide content when the observer can actually reveal it again.
+    Without this, a JS failure would leave the whole page invisible.
+  -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="#hero" aria-label="Pareto Talent — home">
+        <!--
+          logo.png ships on a 2688x1536 canvas but the eagle mark only occupies
+          the 1282x1004 box at offset (699, 215). The .logo-mark wrapper trims the
+          empty canvas in CSS so no derivative asset is needed.
+          If logo.png is ever re-exported or resized, the offsets in .logo-mark
+          (styles.css) must be updated to match.
+        -->
+        <span class="logo-mark">
+          <img src="assets/logo.png" alt="" width="1282" height="1004" decoding="async">
+        </span>
+      </a>
+      <a class="btn btn--primary btn--sm" href="#book">Book Your Free Strategy Call</a>
+    </div>
+
+    <!-- Reading-progress hairline pinned to the bottom edge of the sticky bar -->
+    <div class="progress" aria-hidden="true"><span class="progress__bar" id="progress"></span></div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======================= 1 — HERO ======================= -->
+    <section class="section hero" id="hero" aria-labelledby="hero-title">
+      <!--
+        Ambient blue glows. They are purely decorative, sit behind the copy
+        (z-index 0 under the z-index 1 grid) and are pointer-events: none, so
+        they can never eat a click. The drift is a CSS keyframe on ::before; the
+        optional pointer parallax is a separate transform on the outer span, so
+        the two motions never fight over the same property.
+      -->
+      <span class="hero__glow hero__glow--a" data-parallax="14" aria-hidden="true"></span>
+      <span class="hero__glow hero__glow--b" data-parallax="9" aria-hidden="true"></span>
+
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <h1 id="hero-title">Get <span class="grad">20 Hours</span> Back Every Week.</h1>
+          <p class="lead">
+            Pareto Talent places a top 1% executive assistant in your business — trained,
+            managed, and backed by guarantees — so you can work on the business, not in it.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#book">Book Your Free Strategy Call</a>
+            <!-- Revealed by script.js; a no-JS visitor never sees a dead control. -->
+            <button class="btn btn--ghost" type="button" data-modal-open hidden>See what's included</button>
+          </div>
+        </div>
+
+        <div class="hero__media reveal">
+          <span class="hero__blob" aria-hidden="true"></span>
+          <img class="hero__portrait"
+               src="assets/founder.png"
+               alt="Kasim Aslam, founder, wearing a navy shirt"
+               width="1254" height="1254" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== 2 — SOCIAL PROOF =================== -->
+    <section class="section section--tint" id="social-proof" aria-labelledby="proof-title">
+      <div class="container">
+        <p class="kicker reveal">Social Proof</p>
+        <h2 id="proof-title" class="section__title reveal">Trusted by 100+ founders. Proven results.</h2>
+
+        <ul class="stats reveal">
+          <li class="stat">
+            <span class="stat__value">3</span>
+            <span class="stat__label">successful exits</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">6</span>
+            <span class="stat__label">multi-7-figure businesses</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">$1M+</span>
+            <span class="stat__label">revenue in 12 months</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">93%</span>
+            <span class="stat__label">retention at 12 months</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">100%</span>
+            <span class="stat__label">word of mouth</span>
+          </li>
+        </ul>
+
+        <div class="testimonials">
+          <figure class="card card--quote reveal">
+            <blockquote>
+              <p>Hiring an EA through Pareto Talent was a game-changer. I got back 20+ hours per week to focus on revenue-generating activities.</p>
+            </blockquote>
+            <figcaption>7-Figure Business Owner</figcaption>
+          </figure>
+
+          <figure class="card card--quote reveal">
+            <blockquote>
+              <p>The delegation frameworks Kasim teaches combined with a Pareto Talent EA transformed my business from chaos to systems.</p>
+            </blockquote>
+            <figcaption>Tech Startup CEO</figcaption>
+          </figure>
+
+          <figure class="card card--quote reveal">
+            <blockquote>
+              <p>Best ROI decision I've made. My Pareto EA pays for themselves 10x over.</p>
+            </blockquote>
+            <figcaption>Serial Entrepreneur</figcaption>
+          </figure>
+
+          <figure class="card card--quote reveal">
+            <blockquote>
+              <p>I went from working 70-hour weeks to 40-hour weeks while growing revenue 40%.</p>
+            </blockquote>
+            <figcaption>E-commerce Founder</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 3 — PROBLEM ======================= -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <h2 id="problem-title">You Didn't Build a Business to Be a Full-Time Employee of It.</h2>
+          <p>
+            You're still doing the very tasks you should have delegated years ago — inbox,
+            calendar, research, operations, follow-ups. Time is your scarcest asset, and every
+            hour you spend working IN the business is an hour not spent growing it.
+          </p>
+        </div>
+        <div class="split__media media reveal">
+          <img src="assets/photo-work.jpg"
+               alt="Founder working at a laptop in a modern office"
+               width="3710" height="5565" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4 — HOW IT WORKS ==================== -->
+    <section class="section section--tint" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <p class="kicker reveal">The Program</p>
+        <h2 id="how-title" class="section__title reveal">From Chaos to Systems in 4 Steps.</h2>
+
+        <ol class="steps">
+          <li class="card card--step reveal">
+            <div class="card__head">
+              <span class="icon-badge"><i data-lucide="clipboard-check" aria-hidden="true"></i></span>
+              <span class="step__num">01</span>
+            </div>
+            <h3>Apply</h3>
+            <p>Book a strategy call; we map your bottleneck tasks.</p>
+          </li>
+
+          <li class="card card--step reveal">
+            <div class="card__head">
+              <span class="icon-badge"><i data-lucide="graduation-cap" aria-hidden="true"></i></span>
+              <span class="step__num">02</span>
+            </div>
+            <h3>Get trained</h3>
+            <p>Your operator completes a 10-Day AI Bootcamp (40+ hours) before starting.</p>
+          </li>
+
+          <li class="card card--step reveal">
+            <div class="card__head">
+              <span class="icon-badge"><i data-lucide="users" aria-hidden="true"></i></span>
+              <span class="step__num">03</span>
+            </div>
+            <h3>Get matched</h3>
+            <p>We place a top 1% executive assistant from 1,000+ applicants, working your hours.</p>
+          </li>
+
+          <li class="card card--step reveal">
+            <div class="card__head">
+              <span class="icon-badge"><i data-lucide="clock" aria-hidden="true"></i></span>
+              <span class="step__num">04</span>
+            </div>
+            <h3>Keep your time</h3>
+            <p>Daily operations run on your behalf, backed by continuous training 104+ sessions a year.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================== 5 — BENEFITS ====================== -->
+    <section class="section" id="benefits" aria-labelledby="benefits-title">
+      <div class="container split split--reverse">
+        <div class="split__copy reveal">
+          <h2 id="benefits-title">What Changes When You Have a Right Hand.</h2>
+
+          <ul class="checks">
+            <li>
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span><strong>Email &amp; calendar</strong>: inbox triage, scheduling, follow-ups handled.</span>
+            </li>
+            <li>
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span><strong>Operations</strong>: project management, SOPs, vendor coordination.</span>
+            </li>
+            <li>
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span><strong>Research &amp; analysis</strong>: market research, reports, monitoring.</span>
+            </li>
+            <li>
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span><strong>Personal &amp; lifestyle</strong>: travel, expenses, errands.</span>
+            </li>
+            <li>
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span><strong>Content &amp; marketing</strong>: social, newsletter, campaigns.</span>
+            </li>
+          </ul>
+
+          <p class="closing-line">
+            Consistent, reliable support with timezone flexibility. Delivers 10x ROI through
+            increased productivity.
+          </p>
+        </div>
+        <div class="split__media media reveal">
+          <img src="assets/photo-team.jpg"
+               alt="Remote team on a professional video call"
+               width="4160" height="6240" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== 6 — THE OFFER ====================== -->
+    <section class="section section--tint" id="offer" aria-labelledby="offer-title">
+      <div class="container">
+        <p class="kicker reveal">What's Included</p>
+        <h2 id="offer-title" class="section__title reveal">The Right Hand Program — Your Dedicated Top 1% Operator.</h2>
+
+        <ol class="offer">
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="users" aria-hidden="true"></i></span>
+            <p><strong>AI-powered Right Hand</strong> — full-time operator; top 1% of 1,000+ applicants; fluent English; works your hours.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="graduation-cap" aria-hidden="true"></i></span>
+            <p><strong>Delegation Mastermind</strong> — the system to hand things off and never take them back.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="users" aria-hidden="true"></i></span>
+            <p><strong>Right Hand Community</strong> — 250+ operators network; core AI tool subscriptions covered.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="calendar" aria-hidden="true"></i></span>
+            <p><strong>10-Day AI Bootcamp + Continuous Training</strong> — 40+ hours before placement, then 104+ sessions a year.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="shield" aria-hidden="true"></i></span>
+            <p><strong>Three Guarantees</strong> — Freedom 40, Matching, Lifetime Replacement.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="clipboard-check" aria-hidden="true"></i></span>
+            <p><strong>Pareto Second Brain OS</strong> — decisions, SOPs, vendors, meeting notes in one system; zero knowledge loss.</p>
+          </li>
+          <li class="offer__item reveal">
+            <span class="offer__icon"><i data-lucide="check" aria-hidden="true"></i></span>
+            <p><strong>Dedicated Client Success Manager.</strong></p>
+          </li>
+        </ol>
+
+        <div class="pricing reveal">
+          <p>
+            The Right Hand Program costs <strong>$3,000/month</strong> (annual plan). Includes a
+            one-time <strong>$3,000</strong> placement fee. Annual: <strong>$36,000/yr</strong> —
+            save <strong>$7,200</strong> vs monthly.
+          </p>
+        </div>
+
+        <p class="offer__more">
+          <button class="btn btn--ghost" type="button" data-modal-open hidden>
+            See full program details
+          </button>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 7 — GUARANTEES ==================== -->
+    <section class="section guarantees" id="guarantees" aria-labelledby="guarantees-title">
+      <div class="container">
+        <p class="kicker reveal">Our Promise</p>
+        <h2 id="guarantees-title" class="section__title reveal">Risk Reversed: Three Guarantees.</h2>
+
+        <div class="guarantees__grid">
+          <article class="card card--guarantee reveal">
+            <span class="icon-badge"><i data-lucide="shield" aria-hidden="true"></i></span>
+            <h3>Freedom 40</h3>
+            <p>We guarantee you get your time back. If not, we make it right.</p>
+          </article>
+
+          <article class="card card--guarantee reveal">
+            <span class="icon-badge"><i data-lucide="shield" aria-hidden="true"></i></span>
+            <h3>Matching</h3>
+            <p>If the fit isn't right, we match you with a new operator.</p>
+          </article>
+
+          <article class="card card--guarantee reveal">
+            <span class="icon-badge"><i data-lucide="shield" aria-hidden="true"></i></span>
+            <h3>Lifetime Replacement</h3>
+            <p>Replacement coverage for as long as you're a client.</p>
+          </article>
+        </div>
+
+        <p class="closing-line closing-line--center reveal">Your stake is covered by us, not by you.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 8 — FINAL CTA ==================== -->
+    <section class="section final-cta" id="book" aria-labelledby="final-title">
+      <div class="container final-cta__grid">
+        <div class="final-cta__copy reveal">
+          <h2 id="final-title">Get 20 Hours Back Every Week. Starting Today.</h2>
+          <p>10 spots per cohort. Book your free strategy call now.</p>
+          <!-- Replace the href with the real booking calendar (GoHighLevel / Cal.com) when live. -->
+          <a class="btn btn--primary btn--lg" href="https://paretotalent.com/" target="_blank" rel="noopener">
+            Book Your Free Strategy Call
+          </a>
+        </div>
+        <div class="final-cta__media media reveal">
+          <img src="assets/photo-lifestyle.jpg"
+               alt="Business owner relaxing with a coffee outdoors"
+               width="4000" height="6000" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-mark logo-mark--chip">
+            <img src="assets/logo.png" alt="" width="1282" height="1004" loading="lazy" decoding="async">
+          </span>
+          <p class="footer__tagline">Pareto Talent — a top 1% executive assistant for founders who are done working in the business.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <p class="footer__navTitle">Explore</p>
+          <ul class="footer__links">
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#offer">What's included</a></li>
+            <li><a href="#guarantees">Guarantees</a></li>
+            <li><a href="#book">Book a strategy call</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="year">2026</span> Pareto Talent. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================== DETAILS MODAL =========================== -->
+  <!--
+    One dialog, two triggers (hero ghost action + "See full program details"
+    under THE OFFER). Its body is NOT duplicated here on purpose: script.js
+    clones the 7 program components and the pricing line straight out of
+    #offer the first time it is opened, so the offer and the dialog can never
+    drift apart and the markup stays free until someone asks for it.
+    The wrapper and its triggers ship hidden and are revealed by script.js, so
+    a no-JS visitor never meets a control that does nothing.
+  -->
+  <div class="modal" id="program-details" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__dialog"
+         data-modal-dialog
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modal-title"
+         tabindex="-1">
+      <header class="modal__head">
+        <div class="modal__headText">
+          <p class="modal__kicker">What's Included</p>
+          <h2 class="modal__title" id="modal-title">The Right Hand Program — Your Dedicated Top 1% Operator.</h2>
+        </div>
+        <button class="modal__close" type="button" data-modal-close aria-label="Close program details">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </header>
+
+      <div class="modal__body" data-modal-body></div>
+
+      <footer class="modal__foot">
+        <a class="btn btn--primary" href="https://paretotalent.com/" target="_blank" rel="noopener">
+          Book Your Free Strategy Call
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

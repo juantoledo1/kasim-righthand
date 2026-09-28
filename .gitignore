@@ -1,0 +1,45 @@
+# This project has no build step, no package manager and no dependencies.
+# Everything ignored below is noise; nothing here is needed to deploy `site/`.
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor state
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+*.swp
+*.swo
+*~
+.*.sw?
+
+# --- Logs and local temp files ---
+*.log
+npm-debug.log*
+yarn-error.log*
+.cache/
+tmp/
+temp/
+
+# --- Secrets: none are needed for a static site, so ignore them outright.
+# If you ever add a .env or a deploy token, it must never be committed. ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+.netlify/
+
+# --- Local Netlify CLI state (if anyone runs `netlify` here later) ---
+.netlify/state.json
+node_modules/
