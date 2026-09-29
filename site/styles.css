@@ -864,6 +864,17 @@ strong { color: var(--ink); font-weight: 400; }
 }
 .final-cta .btn:focus-visible { outline-color: var(--white); }
 
+/* The GoHighLevel qualifier form sits inside the navy band, so it gets a
+   white card of its own. The widget controls its own height via the embed
+   data-height; the wrapper just surfaces it. */
+.final-cta__form {
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .55);
+  overflow: hidden;
+}
+.final-cta__form iframe { display: block; min-height: 750px; }
+
 .final-cta__grid {
   /* position/z-index (above) lifts the content over the ::before glow. */
   display: grid;

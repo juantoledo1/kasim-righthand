@@ -71,7 +71,7 @@
             managed, and backed by guarantees — so you can work on the business, not in it.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary btn--lg" href="https://paretotalent.com/" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+            <a class="btn btn--primary btn--lg" href="#book">Book Your Free Strategy Call</a>
             <!-- Revealed by script.js; a no-JS visitor never sees a dead control. -->
             <button class="btn btn--ghost" type="button" data-modal-open hidden>See what's included</button>
           </div>
@@ -342,19 +342,38 @@
     <!-- ==================== 8 — FINAL CTA ==================== -->
     <section class="section final-cta" id="book" aria-labelledby="final-title">
       <div class="container final-cta__grid">
-        <div class="final-cta__copy reveal">
+<div class="final-cta__copy reveal">
           <h2 id="final-title">Get 20 Hours Back Every Week. Starting Today.</h2>
           <p>10 spots per cohort. Book your free strategy call now.</p>
-          <!-- Replace the href with the real booking calendar (GoHighLevel / Cal.com) when live. -->
-          <a class="btn btn--primary btn--lg" href="https://paretotalent.com/" target="_blank" rel="noopener">
-            Book Your Free Strategy Call
-          </a>
+          <!-- GoHighLevel qualifier form (inline embed). The form's conditional
+               logic routes qualified leads to book.html and the rest to
+               not-a-fit.html. -->
         </div>
-        <div class="final-cta__media media reveal">
-          <img src="assets/photo-lifestyle.jpg"
-               alt="Business owner relaxing with a coffee outdoors"
-               width="4000" height="6000" loading="lazy" decoding="async">
+        <div class="final-cta__form reveal">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/kJkDgzbDUSooH3fNSIsp"
+            style="width:100%;height:100%;border:none;border-radius:8px"
+            id="inline-kJkDgzbDUSooH3fNSIsp"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Juan Toledo - Right Hand Program Qualifier"
+            data-height="750"
+            data-layout-iframe-id="inline-kJkDgzbDUSooH3fNSIsp"
+            data-form-id="kJkDgzbDUSooH3fNSIsp"
+            data-cookie-consent="true"
+            data-cookie-consent-provider="auto"
+            title="Juan Toledo - Right Hand Program Qualifier"
+          >
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
+        <!-- The GoHighLevel qualifier form now owns the right column; the
+             lifestyle photo moved out so the conversion surface stays tight. -->
       </div>
     </section>
 
@@ -422,7 +441,7 @@
       <div class="modal__body" data-modal-body></div>
 
       <footer class="modal__foot">
-        <a class="btn btn--primary" href="https://paretotalent.com/" target="_blank" rel="noopener">
+        <a class="btn btn--primary" href="#book">
           Book Your Free Strategy Call
         </a>
       </footer>
