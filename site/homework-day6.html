@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Day 6 Homework — Juan Toledo | Right Hand Program</title>
+  <meta name="description" content="Day 6 homework submission for Pareto Talent Bootcamp: funnel pipeline, qualifier form, automation workflow, and end-to-end test.">
+  <meta name="theme-color" content="#1E3A8A">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Karla:wght@700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* Homework deliverable page: single-page evidence of the Day 6 build. */
+    .hw-section { padding: clamp(52px, 8vw, 96px) 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .hw-section:first-of-type { border-top: 0; }
+    .hw-card {
+      margin-top: 28px; padding: clamp(20px, 4vw, 36px);
+      border-radius: var(--radius); background: #0B1E4B;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 30px 60px -30px rgba(0,0,0,.55);
+    }
+    .hw-card h3 { color: var(--white); margin-bottom: 8px; }
+    .hw-card p, .hw-card li { color: var(--white); opacity: .82; }
+    .hw-card ul { margin: 12px 0 0; padding-left: 20px; }
+    .hw-card li { margin-bottom: 6px; }
+    .hw-link {
+      display: inline-block; margin-top: 14px;
+      color: var(--white); font-weight: 700; text-decoration: none;
+    }
+    .hw-link:hover { text-decoration: underline; }
+    .hw-badge {
+      display: inline-block; margin-bottom: 10px;
+      background: var(--accent); color: #0B1E4B;
+      font: 700 .75rem/1 var(--font-display); text-transform: uppercase;
+      letter-spacing: .08em; padding: 6px 10px; border-radius: 6px;
+    }
+    .hw-meta { margin-top: 44px; text-align: center; opacity: .7; font-size: .85rem; color: var(--white); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html" aria-label="Pareto Talent — home">
+        <span class="logo-mark">
+          <img src="assets/logo.png" alt="" width="1282" height="1004" decoding="async">
+        </span>
+      </a>
+      <a class="btn btn--primary btn--sm" href="index.html#book">Back to Landing</a>
+    </div>
+    <div class="progress" aria-hidden="true"><span class="progress__bar" id="progress"></span></div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO — HW DELIVERABLE ============ -->
+    <section class="section hero" id="hero" aria-labelledby="hw-title">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__copy reveal">
+            <h1 class="hero__title" id="hw-title">Day 6 Homework: The Right Hand Program Funnel</h1>
+            <p class="hero__subtitle">Submission by Juan Toledo — Pareto Talent Bootcamp. Everything below is live and linked.</p>
+            <p><a class="btn btn--primary" href="index.html">Open the live landing page</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 1 — LANDING + QUALIFIER FORM ============ -->
+    <section class="section hw-section" id="landing" aria-labelledby="landing-title">
+      <div class="container">
+        <span class="hw-badge">Item 1 — Landing + Qualifier Form</span>
+        <h2 class="section__title" id="landing-title">Landing page with the embedded qualifier form</h2>
+        <div class="hw-card reveal">
+          <h3>Landing page (Day 5 build)</h3>
+          <p>The GoHighLevel qualifier form is embedded in the final CTA section. Conditional logic routes qualified leads to the booking page and the rest to a not-a-fit page.</p>
+          <ul>
+            <li>Live landing: <a class="hw-link" href="https://kasim-righthand-program.netlify.app/">https://kasim-righthand-program.netlify.app/</a></li>
+            <li>Booking page (qualified leads): <a class="hw-link" href="https://kasim-righthand-program.netlify.app/book.html">/book.html</a></li>
+            <li>Not-a-fit page (disqualified): <a class="hw-link" href="https://kasim-righthand-program.netlify.app/not-a-fit.html">/not-a-fit.html</a></li>
+          </ul>
+        </div>
+        <div class="hw-card reveal">
+          <h3>GoHighLevel form</h3>
+          <p>Name: <strong>Juan Toledo - Right Hand Program Qualifier</strong></p>
+          <ul>
+            <li>Fields: Full name, Phone, Email, Revenue (custom dropdown field)</li>
+            <li>Conditional logic: Revenue &lt; $100k/year → not-a-fit page; otherwise → booking page</li>
+            <li>Form link: <a class="hw-link" href="https://api.leadconnectorhq.com/widget/form/kJkDgzbDUSooH3fNSIsp">https://api.leadconnectorhq.com/widget/form/kJkDgzbDUSooH3fNSIsp</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2 — PIPELINE + CALENDAR ============ -->
+    <section class="section hw-section" id="pipeline" aria-labelledby="pipeline-title">
+      <div class="container">
+        <span class="hw-badge">Item 2 — Pipeline + Calendar</span>
+        <h2 class="section__title" id="pipeline-title">Five-stage sales pipeline and booking calendar</h2>
+        <div class="hw-card reveal">
+          <h3>Pipeline: Juan Toledo - Right Hand Program Funnel</h3>
+          <ul>
+            <li>1. New Lead</li>
+            <li>2. Qualified</li>
+            <li>3. Booked</li>
+            <li>4. Showed Up</li>
+            <li>5. Enrolled</li>
+          </ul>
+        </div>
+        <div class="hw-card reveal">
+          <h3>Calendar: Discovery Call - Right Hand Program</h3>
+          <p>30-minute discovery call with Juan Manuel Toledo. Every qualified lead is routed here by the conditional logic.</p>
+          <p><a class="hw-link" href="https://api.leadconnectorhq.com/widget/booking/uSIaBcRl0GynQsUUX2eS">Book a call — live booking widget</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3 — AUTOMATION WORKFLOW ============ -->
+    <section class="section hw-section" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <span class="hw-badge">Item 3 — Automation Workflow</span>
+        <h2 class="section__title" id="workflow-title">Trigger → Tag → Opportunity → Notification → 2 Emails</h2>
+        <div class="hw-card reveal">
+          <h3>Workflow: Juan Toledo - Right Hand Program Qualifier Automation</h3>
+          <p><strong>Status: Published and live.</strong> Started by form submission ("Juan Toledo - Right Hand Program Qualifier").</p>
+          <ul>
+            <li>1. Add tag <code>form:submitted</code></li>
+            <li>2. If/else on Revenue: &lt; $100k/year → opportunity at <strong>New Lead</strong>; otherwise → opportunity at <strong>Qualified</strong> (both in Juan Toledo - Right Hand Program Funnel)</li>
+            <li>3. Internal notification to the workflow owner (Juan Manuel Toledo) with name, email, phone, revenue</li>
+            <li>4. Email 1 — immediate confirmation to the contact</li>
+            <li>5. Wait 10 minutes</li>
+            <li>6. Check if a call was booked</li>
+            <li>7. If no call booked → Email 2 follow-up with the booking link</li>
+          </ul>
+          <p><a class="hw-link" href="https://app.gohighlevel.com/v2/location/Nh4vnB9j3LG3QfG2YHxx/automation/workflow/3d3d7b47-daf1-4097-a9de-c74069920c52">Open the live workflow (GoHighLevel)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 — END-TO-END TEST ============ -->
+    <section class="section hw-section" id="test" aria-labelledby="test-title">
+      <div class="container">
+        <span class="hw-badge">Item 4 — End-to-end test</span>
+        <h2 class="section__title" id="test-title">Full funnel test executed and confirmed</h2>
+        <div class="hw-card reveal">
+          <h3>Test results (real submissions through the live form)</h3>
+          <ul>
+            <li><strong>Qualified path ($500k+/year):</strong> form → booking page → discovery call booked ("Your meeting has been scheduled")</li>
+            <li><strong>Not-a-fit path (&lt; $100k/year):</strong> form → not-a-fit page ("We're Not the Right Fit")</li>
+            <li><strong>Workflow enrollment:</strong> contact added, tag <code>form:submitted</code> applied</li>
+            <li><strong>Opportunity:</strong> created on the pipeline (Qualified stage for the qualified test)</li>
+            <li><strong>Internal notification:</strong> received — "New lead submitted the qualifier form"</li>
+            <li><strong>Appointment:</strong> confirmed by the calendar system</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hw-meta container">
+      <p>Pareto Talent Bootcamp — Day 6 — Juan Toledo — Right Hand Program</p>
+    </footer>
+  </main>
+</body>
+</html>
