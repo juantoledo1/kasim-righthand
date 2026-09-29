@@ -20,6 +20,10 @@
 
   <style>
     /* Homework deliverable page: single-page evidence of the Day 6 build. */
+    /* The main site hides .reveal until script.js runs; this page has no
+       script, so force everything visible. */
+    :where(.js) :where(.reveal) { opacity: 1; transform: none; }
+
     .hw-section { padding: clamp(52px, 8vw, 96px) 0; border-top: 1px solid rgba(255,255,255,.12); }
     .hw-section:first-of-type { border-top: 0; }
     .hw-card {
@@ -39,8 +43,8 @@
     .hw-link:hover { text-decoration: underline; }
     .hw-badge {
       display: inline-block; margin-bottom: 10px;
-      background: var(--accent); color: #0B1E4B;
-      font: 700 .75rem/1 var(--font-display); text-transform: uppercase;
+      background: var(--blue); color: var(--white);
+      font: 700 .75rem/1 var(--font-head); text-transform: uppercase;
       letter-spacing: .08em; padding: 6px 10px; border-radius: 6px;
     }
     .hw-meta { margin-top: 44px; text-align: center; opacity: .7; font-size: .85rem; color: var(--white); }
