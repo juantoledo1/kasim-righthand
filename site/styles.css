@@ -1260,3 +1260,79 @@ body.is-modal-open {
   .modal__overlay,
   .modal__dialog { transition: none; }
 }
+
+/* ============================ 9 — SHOWCASE (Day 7) ============================
+   Additive only. Every rule below is scoped to .showcase / .showcase__* classes
+   that appear nowhere else in this stylesheet, so no existing rule is
+   overridden and the navbar, hero, footer and GoHighLevel form embed behave
+   exactly as before. */
+
+.showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(22px, 2.6vw, 34px);
+  align-items: start;
+}
+
+.showcase__card {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 30px 60px -34px rgba(15, 23, 42, .45);
+}
+
+/* The AI hero and CTA frames are 16:9; the mentorship frame is 1:1. Locking the
+   ratio per card keeps the row heights predictable instead of letting a taller
+   neighbour stretch its neighbour's caption band. */
+.showcase__card--wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.showcase__card--square { aspect-ratio: 1 / 1; }
+.showcase__card--sixteen { aspect-ratio: 16 / 9; }
+
+.showcase__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Copy sits on the empty space each image was generated with. The scrim is a
+   bottom-up gradient rather than a flat panel so the photograph still reads as
+   a photograph, and it keeps the text legible whatever lands behind it. */
+.showcase__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: 6px;
+  padding: clamp(46px, 6vw, 74px) clamp(20px, 2.6vw, 32px) clamp(20px, 2.6vw, 30px);
+  background: linear-gradient(to top,
+    rgba(15, 23, 42, .90) 0%,
+    rgba(15, 23, 42, .72) 34%,
+    rgba(15, 23, 42, .34) 66%,
+    rgba(15, 23, 42, 0) 100%);
+  color: var(--white);
+}
+.showcase__caption--left { text-align: left; justify-items: start; }
+.showcase__caption--center { text-align: center; justify-items: center; }
+.showcase__caption--right { text-align: right; justify-items: end; }
+
+.showcase__label {
+  font-size: clamp(19px, 2.1vw, 25px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.showcase__text {
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, .84);
+  max-width: 46ch;
+}
+
+@media (max-width: 760px) {
+  .showcase__grid { grid-template-columns: 1fr; }
+  .showcase__card--wide { grid-column: auto; }
+  .showcase__caption { justify-items: center; text-align: center; }
+  .showcase__text { max-width: none; }
+}
